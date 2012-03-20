@@ -12,6 +12,11 @@ var win1 = Titanium.UI.createWindow({
     title:'Tab 1',
     backgroundColor:'#fff'
 });
+var win = Titanium.UI.createWindow({
+    fullscreen: true,
+    visible: true
+});
+
 var tab1 = Titanium.UI.createTab({  
     icon:'KS_nav_views.png',
     title:'Tab 1',
@@ -59,6 +64,45 @@ win2.add(label2);
 tabGroup.addTab(tab1);  
 tabGroup.addTab(tab2);  
 
+// Loading Screen Start
+
+var actInd = Titanium.UI.createActivityIndicator({
+bottom:10,
+height:50,
+width:10,
+topMost: true,
+style:Titanium.UI.iPhone.ActivityIndicatorStyle.PLAIN
+});
+
+function loadingScreen(){
+actInd.style = Titanium.UI.iPhone.ActivityIndicatorStyle.PLAIN;
+actInd.font = {fontFamily:'Helvetica Neue', fontSize:15,fontWeight:'bold'};
+actInd.color = 'white';
+actInd.message = 'Loading...';
+actInd.width = 210;
+actInd.show();
+var imageView = Titanium.UI.createImageView({
+image:'/iphone/Default.png',
+width:'100%',
+height:'100%'
+});
+win.add(imageView);
+win.add(actInd);
+
+setTimeout(function()
+{
+actInd.hide();
+//
+// Create Windows
+//
+// add tabs
+//
+tabGroup.open();
+
+},10000);
+}
 
 // open tab group
-tabGroup.open();
+
+loadingScreen();
+win.open();
