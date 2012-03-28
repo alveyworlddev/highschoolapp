@@ -9,7 +9,6 @@ var tabGroup = Titanium.UI.createTabGroup();
 // create base UI tab and root window
 //
 var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
     backgroundColor:'#fff'
 });
 var win = Titanium.UI.createWindow({
@@ -19,7 +18,6 @@ var win = Titanium.UI.createWindow({
 
 var tab1 = Titanium.UI.createTab({  
     icon:'KS_nav_views.png',
-    title:'Tab 1',
     window:win1
 });
 
@@ -78,7 +76,7 @@ actInd.hide();
 //
 // add tabs
 //
-tabGroup.open();
+
 
 },10000);
 }
@@ -87,3 +85,4 @@ tabGroup.open();
 
 loadingScreen();
 win.open();
+win1.open();
