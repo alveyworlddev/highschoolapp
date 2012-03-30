@@ -9,7 +9,8 @@ var tabGroup = Titanium.UI.createTabGroup();
 // create base UI tab and root window
 //
 var win1 = Titanium.UI.createWindow({  
-    backgroundColor:'#fff'
+    backgroundColor:'#fff',
+    backgroundImage:'/images/paper.png'
 });
 var win = Titanium.UI.createWindow({
     fullscreen: true,
