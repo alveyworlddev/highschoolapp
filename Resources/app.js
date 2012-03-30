@@ -10,8 +10,32 @@ var tabGroup = Titanium.UI.createTabGroup();
 //
 var win1 = Titanium.UI.createWindow({  
     backgroundColor:'#fff',
-    backgroundImage:'/images/paper.png'
+    backgroundImage:'/images/paper.png',
 });
+
+var taco_button = Titanium.UI.createButton({
+	text: "tacoo!",
+	top:360,
+	width:150,
+	height:100,
+	right:5,
+	
+	backgroundImage:'/images/taco.png'	
+	
+});
+
+var esplainer_button = Titanium.UI.createButton({
+	top:60,
+	width:200,
+	height:125,
+	left: 5,
+	
+	backgroundImage:'/images/esplainer.png'	
+	
+});
+
+
+
 var win = Titanium.UI.createWindow({
     fullscreen: true,
     visible: true
@@ -24,13 +48,15 @@ var tab1 = Titanium.UI.createTab({
 
 var label1 = Titanium.UI.createLabel({
 	color:'#999',
-	text:'I am Window 1',
+	text:'main menu',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto'
 });
 
 win1.add(label1);
+win1.add(taco_button);
+win1.add(esplainer_button);
 
 //
 // create controls tab and root window
