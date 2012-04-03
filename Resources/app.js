@@ -15,20 +15,19 @@ var win1 = Titanium.UI.createWindow({
 
 var taco_button = Titanium.UI.createButton({
 	text: "tacoo!",
-	top:360,
-	width:150,
-	height:100,
-	right:5,
-	
+	bottom:'bottom',
+	width:'60%',
+	height:'30%',
+	right:'5%',
 	backgroundImage:'/images/taco.png'	
 	
 });
 
 var esplainer_button = Titanium.UI.createButton({
-	top:60,
-	width:200,
-	height:125,
-	left: 5,
+	top: '13%',
+	width:'85%',
+	height:'30%',
+	right: '5%',
 	
 	backgroundImage:'/images/esplainer.png'	
 	
@@ -48,7 +47,6 @@ var tab1 = Titanium.UI.createTab({
 
 var label1 = Titanium.UI.createLabel({
 	color:'#999',
-	text:'main menu',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto'
