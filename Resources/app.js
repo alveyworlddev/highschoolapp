@@ -38,6 +38,7 @@ var esplainer_button = Titanium.UI.createButton({
 var win = Titanium.UI.createWindow({
     fullscreen: true,
     visible: true
+    
 });
 
 var tab1 = Titanium.UI.createTab({  
@@ -55,6 +56,7 @@ var label1 = Titanium.UI.createLabel({
 win1.add(label1);
 win1.add(taco_button);
 win1.add(esplainer_button);
+
 
 //
 // create controls tab and root window
