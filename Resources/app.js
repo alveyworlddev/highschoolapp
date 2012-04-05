@@ -14,25 +14,33 @@ var win1 = Titanium.UI.createWindow({
 });
 
 var taco_button = Titanium.UI.createButton({
-	text: "tacoo!",
-	bottom:'bottom',
-	width:'60%',
-	height:'30%',
-	right:'5%',
+	top: 230,
+	width:170,
+	height: 117,
+	right:'8%',
 	backgroundImage:'/images/taco.png'	
 	
 });
 
 var esplainer_button = Titanium.UI.createButton({
-	top: '13%',
-	width:'85%',
-	height:'30%',
-	right: '5%',
+	top: 113,
+	width: 232,
+	height: 114,
+	left: '13%',
 	
 	backgroundImage:'/images/esplainer.png'	
 	
 });
 
+var piball_button = Titanium.UI.createButton({
+	top: 320,
+	width: 220,
+	height: 217,
+
+	
+	backgroundImage:'/images/piball.png'	
+	
+});
 
 
 var win = Titanium.UI.createWindow({
@@ -56,7 +64,7 @@ var label1 = Titanium.UI.createLabel({
 win1.add(label1);
 win1.add(taco_button);
 win1.add(esplainer_button);
-
+win1.add(piball_button);
 
 //
 // create controls tab and root window
