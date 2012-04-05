@@ -1,3 +1,4 @@
+Ti.include('taco.js');
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#000');
 
@@ -19,9 +20,14 @@ var taco_button = Titanium.UI.createButton({
 	height: 117,
 	right:'8%',
 	backgroundImage:'/images/taco.png'	
+})
+taco_button.addEventListener('click', function()
+	{
+		tacoWin.open()
+	}
 	
-});
-
+	
+);
 var esplainer_button = Titanium.UI.createButton({
 	top: 113,
 	width: 232,
