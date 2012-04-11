@@ -16,5 +16,20 @@ back_button.addEventListener('click', function()
 		piballWin.close()
 	});
 
+var circle = Titanium.UI.createView({
+	height:100,
+	width:100,
+	borderRadius:50,
+	backgroundColor:'#336699',
+	top:10
+});
 
+
+
+Ti.Gesture.addEventListener('shake',function(e)
+{
+	circle.animate({top:200,right:30,duration:500})
+});
+
+piballWin.add(circle);
 piballWin.add(back_button);
