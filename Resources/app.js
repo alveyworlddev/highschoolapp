@@ -1,5 +1,7 @@
 Ti.include('taco.js');
 Ti.include('piball.js');
+Ti.include('esplainer.js');
+
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#000');
 
@@ -38,6 +40,11 @@ var esplainer_button = Titanium.UI.createButton({
 	backgroundImage:'/images/esplainer.png'	
 	
 });
+
+esplainer_button.addEventListener('click', function()
+	{
+		esplainerWin.open()
+	});
 
 var piball_button = Titanium.UI.createButton({
 	top: 320,
