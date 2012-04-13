@@ -17,19 +17,36 @@ back_button.addEventListener('click', function()
 	});
 
 var circle = Titanium.UI.createView({
-	height:100,
-	width:100,
-	borderRadius:50,
-	backgroundColor:'#336699',
-	top:10
+	height:160,
+	width:160,
+	borderRadius:80,
+	backgroundColor:'#660066',
+	top:'35%'
 });
 
 
 
 Ti.Gesture.addEventListener('shake',function(e)
 {
-	circle.animate({top:200,right:30,duration:500})
+	circle.animate({right:75,duration:100},function() 
+	{
+		circle.animate({left:75,duration:100},function() 
+		{
+			circle.animate({right:65,duration:100},function() 
+			{
+				circle.animate({left:75,duration:100},function()
+				{
+					circle.animate({right:75,duration:100},function() 
+					{
+						circle.animate({left:85,duration:100}, function()
+						{
+							circle.animate({center:{x:160,y:248}})	//x is about 340 in length,
+						});
+					});
+				})
+			});
+		});	
+	});
 });
-
 piballWin.add(circle);
 piballWin.add(back_button);
