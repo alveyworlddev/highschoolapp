@@ -125,13 +125,6 @@ win.add(actInd);
 setTimeout(function()
 {
 actInd.hide();
-//
-// Create Windows
-//
-// add tabs
-//
-
-
 },10000);
 }
 
