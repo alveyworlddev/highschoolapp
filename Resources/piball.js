@@ -38,10 +38,7 @@ Ti.Gesture.addEventListener('shake',function(e)
 				{
 					circle.animate({right:75,duration:100},function() 
 					{
-						circle.animate({left:85,duration:100}, function()
-						{
-							circle.animate({center:{x:160,y:248}})	//x is about 340 in length,
-						});
+						circle.animate({left:85,duration:100})
 					});
 				})
 			});
