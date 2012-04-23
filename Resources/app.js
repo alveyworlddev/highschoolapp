@@ -80,10 +80,18 @@ var label1 = Titanium.UI.createLabel({
 	width:'auto'
 });
 
+var mainTitle = Titanium.UI.createImageView({
+	image:'/images/title_hsapp.png',
+	width:500,
+	height:80,
+	top:0,
+})
+
 win1.add(label1);
 win1.add(taco_button);
 win1.add(esplainer_button);
 win1.add(piball_button);
+win1.add(mainTitle);
 
 //
 // create controls tab and root window
