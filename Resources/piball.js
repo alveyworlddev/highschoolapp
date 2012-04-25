@@ -16,6 +16,49 @@ back_button.addEventListener('click', function()
 		piballWin.close()
 	});
 
+var actInd = Titanium.UI.createActivityIndicator({
+	bottom:10, 
+	height:50,
+	width:10,
+	topMost: true,
+	style:Titanium.UI.iPhone.ActivityIndicatorStyle.PLAIN
+});
+
+function loadingScreen(){
+	actInd.style = Titanium.UI.iPhone.ActivityIndicatorStyle.PLAIN;
+	actInd.font = {fontFamily:'Helvetica Neue', fontSize:15,fontWeight:'bold'};
+	actInd.width = 210;
+	actInd.show();
+
+	setTimeout(function()
+	{
+		actInd.hide();
+		//
+		// Create Windows
+		//
+		//  add tabs
+		//
+		win1.open();
+
+
+
+	
+	},10);
+}
+
+
+function piball_zoom()
+{Titanium.UI.create2DMatrix().scale(0.4);
+var circle = Titanium.UI.createView({
+	backgroundImage:'../images/cloud.png',
+	height:178,
+	width:261,
+	top:10,
+	transform:piball_zoom
+});
+
+
+
 var circle = Titanium.UI.createView({
 	height:160,
 	width:160,
@@ -45,5 +88,9 @@ Ti.Gesture.addEventListener('shake',function(e)
 		});	
 	});
 });
+
+
+
+piballWin.add(piball_zoom)
 piballWin.add(circle);
 piballWin.add(back_button);
