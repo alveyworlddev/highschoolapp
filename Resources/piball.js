@@ -16,34 +16,32 @@ back_button.addEventListener('click', function()
 		piballWin.close()
 	});
 
-var circle = Titanium.UI.createView({
-	height:160,
-	width:160,
-	borderRadius:80,
-	backgroundColor:'#660066',
-	top:'35%'
+var piball = Titanium.UI.createImageView({
+	image:'/images/pibowl.png',
+	width:200,
+	height:200,
 });
 
 
 
 Ti.Gesture.addEventListener('shake',function(e)
 {
-	circle.animate({right:75,duration:100},function() 
+	piball.animate({right:75,duration:100},function() 
 	{
-		circle.animate({left:75,duration:100},function() 
+		piball.animate({left:75,duration:100},function() 
 		{
-			circle.animate({right:65,duration:100},function() 
+			piball.animate({right:65,duration:100},function() 
 			{
-				circle.animate({left:75,duration:100},function()
+				piball.animate({left:75,duration:100},function()
 				{
-					circle.animate({right:75,duration:100},function() 
+					piball.animate({right:75,duration:100},function() 
 					{
-						circle.animate({left:85,duration:100})
+						piball.animate({left:85,duration:100})
 					});
 				})
 			});
 		});	
 	});
 });
-piballWin.add(circle);
+piballWin.add(piball);
 piballWin.add(back_button);
