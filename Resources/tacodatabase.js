@@ -3,7 +3,7 @@
  */
 function initialize_database(user_name){
 	
-	user_name = typeof(user_name) != 'undefined' ? a : 'unknown';
+	user_name = typeof(user_name) != 'undefined' //? a : 'unknown';
 	var db = Titanium.Database.open('highschoolapp');
 	db.execute('CREATE TABLE IF NOT EXISTS restaurants (id int, name varchar(255))');
 	
