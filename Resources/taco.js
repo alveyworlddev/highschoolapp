@@ -31,23 +31,34 @@ b4.addEventListener('click', function()
 		backgroundImage:'images/paper.png'
 	});
 
-//		subwin.orientationModes = [ 
-//		Titanium.UI.PORTRAIT, 
-//		Titanium.UI.UPSIDE_PORTRAIT, 
-//		Titanium.UI.LANDSCAPE_LEFT, 
-//		Titanium.UI.LANDSCAPE_RIGHT, 
-//		Titanium.UI.FACE_UP, 
-//		Titanium.UI.FACE_DOWN
-//	];
+		subwin.orientationModes = [ 
+		Titanium.UI.PORTRAIT, 
+		Titanium.UI.UPSIDE_PORTRAIT, 
+		Titanium.UI.LANDSCAPE_LEFT, 
+		Titanium.UI.LANDSCAPE_RIGHT, 
+		Titanium.UI.FACE_UP, 
+		Titanium.UI.FACE_DOWN
+	];
 
 	
 	var close = Titanium.UI.createButton({
-		title:'close',
+		title:'Close',
 		width:200,
 	    height:40,
 	    top:350,
 	    left: 80
 	});
+	var tableview = Titanium.UI.createTableView({
+	top:110,
+	left:20,
+	right:20,
+	height:230,
+	width:220,
+	borderWidth:3,
+	borderRadius:10,
+	borderColor:'#214792'
+});
+		subwin.add(tableview);
 		subwin.add(close);
 	close.addEventListener('click', function()
 	{
