@@ -22,7 +22,14 @@ var piball = Titanium.UI.createImageView({
 	height:200,
 });
 
-
+var scaled1 = false;
+piball.addEventListener('click', function()
+{
+	var t = Titanium.UI.create2DMatrix();
+		t = t.scale(4.8);
+		center1 = piball.center;
+		piball.animate({transform:t,center:win.center,zIndex:10,duration:500});
+});
 
 Ti.Gesture.addEventListener('shake',function(e)
 {
