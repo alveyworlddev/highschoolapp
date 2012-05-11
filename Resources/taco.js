@@ -1,3 +1,4 @@
+Ti.include("tacodatabase.js");
 var tacoWin = Titanium.UI.createWindow({  
     backgroundColor:'#fff',
     backgroundImage:'images/paper.png',
@@ -16,16 +17,68 @@ back_button.addEventListener('click', function()
 		tacoWin.close()
 	});
 
-var win = Titanium.UI.currentWindow;
-
-var b1 = Titanium.UI.createButton({
+var b4 = Titanium.UI.createButton({
 	title:'Edit Locations',
-	height:40,
 	width:200,
-	top : 350,
-	left : 80
+	height:40,
+	top:350,
+	left: 80
+});
+b4.addEventListener('click', function()
+{
+	initialize_database("test");
+	var subwin = Ti.UI.createWindow({
+		backgroundColor:'images/back.png'
+	});
+
+	subwin.orientationModes = [ 
+		Titanium.UI.PORTRAIT, 
+		Titanium.UI.UPSIDE_PORTRAIT, 
+		Titanium.UI.LANDSCAPE_LEFT, 
+		Titanium.UI.LANDSCAPE_RIGHT, 
+		Titanium.UI.FACE_UP, 
+		Titanium.UI.FACE_DOWN
+	];
+
+	
+	var close = Titanium.UI.createButton({
+		title:'close',
+		width:200,
+	    height:40,
+	    top:350,
+	    left: 80
+	});
+		subwin.add(close);
+	close.addEventListener('click', function()
+	{
+		if (Titanium.Platform.osname == 'android')
+		{
+			// reset the orientation modes on the parent to ensure the orientation gets reset on the previous window
+			win.orientationModes = win.orientationModes;
+		}
+		subwin.close();
+	});
+	subwin.open();
+    
+//add table view to the window
+Titanium.UI.currentWindow.add(tableview);
+    
+var win = Ti.UI.currentWindow;
+var scrollview = Ti.UI.createScrollView({
+    contentWidth:'auto',
+	contentHeight:'auto',
+	top:0,
+	showVerticalScrollIndicator:true,
+	showHorizontalScrollIndicator:false
+});
+var v1 = Ti.UI.createView({
+	top:10,
+	left:10,
+	width:300,
+	height:30
 });
 
+});
 var win = Titanium.UI.currentWindow;
 
 var l = Titanium.UI.createLabel({
@@ -37,6 +90,9 @@ var l = Titanium.UI.createLabel({
 	left: 80
 });
 
+//scrollview.add(v1);
+//tacoWin.add(scrollview);
+
 tacoWin.add(l);
-tacoWin.add(b1)
 tacoWin.add(back_button);
+tacoWin.add(b4);
